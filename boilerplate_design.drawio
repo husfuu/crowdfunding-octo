@@ -1,9 +1,53 @@
-<mxfile host="app.diagrams.net" modified="2023-05-29T13:22:39.210Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36" version="21.3.5" etag="Is1phw9NSa_qD1Pq3EXR" type="github">
+<mxfile host="app.diagrams.net" modified="2023-05-29T13:37:00.775Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36" etag="P_UrPxlsQxUc08qyh-CN" version="21.3.5" type="github">
   <diagram name="Page-1" id="rS6X7avhvLT0H6M4oDf0">
-    <mxGraphModel>
+    <mxGraphModel dx="1434" dy="774" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="I9_JXebfC22g2j3GJQay-1" value="Constructor&lt;br&gt;NewCampaignHandler" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="300" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="I9_JXebfC22g2j3GJQay-3" value="Handler&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;CampaignHandler" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="200" y="279" width="110" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="I9_JXebfC22g2j3GJQay-6" value="APIHandler" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="410" y="150" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="I9_JXebfC22g2j3GJQay-7" value="Func" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="190" y="410" width="140" height="120" as="geometry">
+            <mxRectangle x="190" y="410" width="70" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="I9_JXebfC22g2j3GJQay-8" value="GetListCampaign" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="I9_JXebfC22g2j3GJQay-7">
+          <mxGeometry y="30" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="I9_JXebfC22g2j3GJQay-9" value="GetCampaignByID" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="I9_JXebfC22g2j3GJQay-7">
+          <mxGeometry y="60" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="I9_JXebfC22g2j3GJQay-10" value="CreateCampaign" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="I9_JXebfC22g2j3GJQay-7">
+          <mxGeometry y="90" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="I9_JXebfC22g2j3GJQay-12" value="wrapper&lt;br&gt;handler" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="440" y="10" width="150" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="I9_JXebfC22g2j3GJQay-13" value="CMSHandler" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="550" y="150" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="I9_JXebfC22g2j3GJQay-14" value="Handler&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;UserHandler" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="380" y="279" width="110" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="I9_JXebfC22g2j3GJQay-15" value="Func" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="365" y="410" width="140" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="I9_JXebfC22g2j3GJQay-16" value="GetListUser" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="I9_JXebfC22g2j3GJQay-15">
+          <mxGeometry y="30" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="I9_JXebfC22g2j3GJQay-17" value="GetUserByID" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="I9_JXebfC22g2j3GJQay-15">
+          <mxGeometry y="60" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="I9_JXebfC22g2j3GJQay-18" value="CreateUser" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="I9_JXebfC22g2j3GJQay-15">
+          <mxGeometry y="90" width="140" height="30" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
