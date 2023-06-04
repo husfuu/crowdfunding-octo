@@ -1,0 +1,45 @@
+App:
+  Name: Crowd Funding Octo
+  EndPoint: /api/v1
+  Port: 3000
+  Env: Development
+  SSL: false
+  BodyLimit: 20
+  HexaSecretKey: cwrrmypposrfthak
+  ApplicationName : CMS Company Profile
+  BaseUrl : https://bla-bla-bla.app
+  BaseUrlLocal : localhost:3000
+
+Routes:
+    Methods: GET,POST,PUT,DELETE
+    Headers: Content-Type,Authorization,Authorization-ID,Accept-Key,Timestamp,Cookie
+    Origins:
+        IsDefault: true
+        FeLocal: localhost:3000
+        FeDev: localhost:3000
+        FeProd: localhost:3000
+
+Connection:
+    DatabaseApp:
+        DriverName: postgres
+        DriverSource: user=assignment password=mysecretpassword sslmode=disable dbname=crowdfunding_dev host=127.0.0.1 port=5432
+        MaxOpenConns: 5
+        MaxIdleConns: 5
+        ConnMaxLifetime: 30
+        ConnMaxIdleTime: 30
+
+Logger:
+    Logrus:
+        Level: Debug
+    ZapLogger:
+        Development: true
+        DisableCaller: false
+        DisableStacktrace: false
+        Encoding: json
+        Level: info
+
+Redis:
+    Host : 127.0.0.1:6379
+    Password :
+    Db : 0
+    RedisKey: xxxxxx
