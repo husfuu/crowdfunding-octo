@@ -8,7 +8,6 @@ import (
 )
 
 type Repository struct {
-	// Api api.ApiRepository
 	Api api.ApiRepository
 }
 

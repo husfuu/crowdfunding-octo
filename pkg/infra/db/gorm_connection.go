@@ -23,7 +23,7 @@ func NewGormConnection(conf *config.DatabaseAccount, log *logrus.Logger) *gorm.D
 	fmt.Println("dbName: ", dbName)
 	if conf.DriverName == "postgres" || conf.DriverName == "pgx" {
 		db, err = gorm.Open(postgres.Open(conf.DriverSource), &gorm.Config{
-			Logger: gormlog.Default.LogMode(gormlog.LogLevel(gormlog.Error)),
+			Logger: gormlog.Default.LogMode(gormlog.LogLevel(gormlog.Info)),
 		})
 	}
 

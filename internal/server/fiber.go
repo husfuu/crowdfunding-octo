@@ -13,6 +13,7 @@ import (
 	"github.com/sirupsen/logrus"
 
 	apiCampaign "github.com/husfuu/crowdfunding-octo/internal/api/campaign"
+	apiUser "github.com/husfuu/crowdfunding-octo/internal/api/user"
 )
 
 func Run(conf *config.Config, dbList *db.DatabaseList, appLoger *logrus.Logger) {
@@ -34,6 +35,7 @@ func Run(conf *config.Config, dbList *db.DatabaseList, appLoger *logrus.Logger) 
 
 	// Routes
 	apiCampaign.NewRoutes(api, handler)
+	apiUser.NewRoutes(api, handler)
 
 	log.Fatal(app.Listen(fmt.Sprintf(":%s", conf.App.Port)))
 }

@@ -1,6 +1,10 @@
 package utils
 
-import "strings"
+import (
+	"strings"
+
+	"golang.org/x/crypto/bcrypt"
+)
 
 func GetDBNameFromDriverSource(str string) string {
 	if str == "" {
@@ -29,4 +33,14 @@ func GetDBNameFromDriverSource(str string) string {
 		return array2[0]
 	}
 	return ""
+}
+
+func HashPassword(password string) (string, error) {
+	bytes, err := bcrypt.GenerateFromPassword([]byte(password), 14)
+	return string(bytes), err
+}
+
+func CheckPasswordHash(password, hash string) bool {
+	err := bcrypt.CompareHashAndPassword([]byte(hash), []byte(password))
+	return err == nil
 }
