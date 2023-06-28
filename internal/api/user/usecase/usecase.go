@@ -74,7 +74,7 @@ func (uu UserUsecase) GetUserById(userId int64) (*du.User, *exception.Error) {
 	}
 
 	if user.UserId == 0 {
-		return nil, exception.NewError(fiber.StatusNotFound, "user not found. "+err.Error())
+		return nil, exception.NewError(fiber.StatusNotFound, "user not found.")
 	}
 
 	return &user, nil
@@ -104,10 +104,13 @@ func (uu UserUsecase) IsEmailAvailable(request du.EmailAvailableRequest) (bool, 
 		uu.Log.Error(err)
 		return false, exception.NewError(fiber.StatusInternalServerError, err.Error())
 	}
+
+	// email is not available because there's used before
 	if user.UserId != 0 {
 		return false, nil
 	}
 
+	// email is available because there's no used before
 	return true, nil
 }
 
@@ -119,7 +122,7 @@ func (uu UserUsecase) UpdateUser(request du.UserUpdateRequest) (*int64, *excepti
 	}
 
 	if user.UserId == 0 {
-		return nil, exception.NewError(fiber.StatusNotFound, "user not found. "+err.Error())
+		return nil, exception.NewError(fiber.StatusNotFound, "user not found. ")
 	}
 
 	userId, err := uu.Repo.Api.User.UpdateUser(request)

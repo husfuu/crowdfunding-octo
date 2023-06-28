@@ -15,18 +15,14 @@ const (
 	email = ?
 	`
 	qInsertUser = `
-	INSERT INTO "user" (user_id, name, occupation, email, avatar_file_name, role, created_at, updated_at)
-	VALUES(?, ?, ?, ?, ?, ?, ?, ?)	
+	INSERT INTO "user" (name, email, occupation, password_hash)
+	VALUES(?, ?, ?, ?)	
 	`
 	qUpdateUser = `
-	UPDATE user 
+	UPDATE "user" 
 	SET name = ?,
-	occupation = ?,
 	email = ?,
-	avatar_file_name = ?,
-	role = ?,
-	created_at = ?,
-	updated_at = ?
+	occupation = ?
 	WHERE user_id = ?
 	`
 	qReturningUserId = `
