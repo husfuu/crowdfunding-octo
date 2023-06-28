@@ -38,18 +38,32 @@ func (ur UserRepo) GetUserByEmail(email string) (dr.User, error) {
 func (ur UserRepo) GetUserById(userId int64) (dr.User, error) {
 	var response dr.User
 	err := ur.DBList.APIDB.Raw(qSelectUser+qWhere+qUserId, userId).Scan(&response).Error
-
 	return response, err
 }
 
 func (ur UserRepo) UpdateUser(request dr.UserUpdateRequest) (int64, error) {
 	var response int64
-	err := ur.DBList.APIDB.Raw(qUpdateUser+qReturningUserId, request).Scan(&response).Error
+	params := make([]interface{}, 0)
+	params = append(params,
+		request.Name,
+		request.Email,
+		request.Occupation,
+		request.UserID,
+	)
+
+	err := ur.DBList.APIDB.Raw(qUpdateUser+qReturningUserId, params...).Scan(&response).Error
 	return response, err
 }
 
 func (ur UserRepo) PostUser(request dr.UserReqisterRequest) (int64, error) {
 	var response int64
-	err := ur.DBList.APIDB.Raw(qInsertUser+qReturningUserId, request).Scan(&response).Error
+	params := make([]interface{}, 0)
+	params = append(params,
+		request.Name,
+		request.Email,
+		request.Occupation,
+		request.Password,
+	)
+	err := ur.DBList.APIDB.Raw(qInsertUser+qReturningUserId, params...).Scan(&response).Error
 	return response, err
 }

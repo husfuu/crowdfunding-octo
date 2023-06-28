@@ -8,6 +8,8 @@ import (
 )
 
 type Repository interface {
+	// GetAllCampaign
+	// MarkAllImagesAsNonPrimary
 	GetCampaignById(id int64) (dr.CampaignResponse, error)
 	GetCImage(campaignId int64) ([]dr.CampaignImage, error)
 	PostCampaign(params ...interface{}) (int64, error)

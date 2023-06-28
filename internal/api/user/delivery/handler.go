@@ -1,6 +1,8 @@
 package delivery
 
 import (
+	"fmt"
+
 	"github.com/gofiber/fiber/v2"
 	"github.com/husfuu/crowdfunding-octo/config"
 	dh "github.com/husfuu/crowdfunding-octo/internal/api/user/model"
@@ -47,7 +49,7 @@ func (uh UserHandler) Register(c *fiber.Ctx) error {
 	}
 	respData, errResp := uh.Usecase.Api.User.Register(payload)
 	if errResp != nil {
-		return exception.CreateResponse_Log(initException, fiber.StatusBadRequest, "", nil)
+		return exception.CreateResponse_Log(initException, errResp.Code, errResp.Message, nil)
 	}
 	message := "success to register"
 	return exception.CreateResponse_Log(initException, fiber.StatusOK, message, respData)
@@ -90,9 +92,10 @@ func (uh UserHandler) UpdateUser(c *fiber.Ctx) error {
 	}
 
 	// usecase process
+	fmt.Println("payload: ", payload)
 	respData, errResp := uh.Usecase.Api.User.UpdateUser(payload)
 	if errResp != nil {
-		return exception.CreateResponse_Log(initException, fiber.StatusBadRequest, "Error usecase", nil)
+		return exception.CreateResponse_Log(initException, errResp.Code, errResp.Message, nil)
 	}
 
 	message := "success to update user"
@@ -108,7 +111,7 @@ func (uh UserHandler) GetUser(c *fiber.Ctx) error {
 	// usecase process
 	respData, errResp := uh.Usecase.Api.User.GetUserById(int64(payload))
 	if errResp != nil {
-		return exception.CreateResponse_Log(initException, fiber.StatusBadRequest, "Error usecase", nil)
+		return exception.CreateResponse_Log(initException, errResp.Code, errResp.Message, nil)
 	}
 	message := "success to get user"
 	return exception.CreateResponse_Log(initException, fiber.StatusOK, message, respData)

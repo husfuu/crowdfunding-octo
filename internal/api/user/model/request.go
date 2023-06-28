@@ -21,7 +21,7 @@ type UserReqisterRequest struct {
 }
 
 type UserUpdateRequest struct {
-	UserID     int64  `json:"user_id"`
+	UserID     int64  `json:"user_id" binding:"required"`
 	Name       string `json:"name" binding:"required"`
 	Email      string `json:"email" binding:"required,email"`
 	Occupation string `json:"occupation" binding:"required"`
